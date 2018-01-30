@@ -11,11 +11,11 @@
  <button id="refresh" onclick="refresh()" style="visibility: hidden">restart</button>
  <div id="questionnire" style="visibility: hidden; top: 0px; position: absolute; float: left;">
      <p>Q: Which maker is this brand from?</p>
-	 <div id = "part1" style="top: 45px; left: 0px; position: absolute;"></div>
-	 <div id = "part2" style="top: 45px; left: 300px; position: absolute;"></div>
-	 <div id = "part3" style="top: 45px; left: 600px; position: absolute;"></div>
-	 <div id = "part4" style="top: 45px; left: 900px; position: absolute;"></div>
-	 <div id = "part5" style="top: 45px; left: 1200px; position: absolute;"></div>
+	 <div id = "part0" style="top: 45px; left: 0px; position: absolute;"></div>
+	 <div id = "part1" style="top: 45px; left: 300px; position: absolute;"></div>
+	 <div id = "part2" style="top: 45px; left: 600px; position: absolute;"></div>
+	 <div id = "part3" style="top: 45px; left: 900px; position: absolute;"></div>
+	 <div id = "part4" style="top: 45px; left: 1200px; position: absolute;"></div>
 	 <p id="count" style="top: 380px; left: 10px; position: fixed;"></p>
    </div>
    <div style="top: 415px; left: 10px; position: absolute;">
@@ -49,8 +49,6 @@
   change things here, don't touch anything else
   在这里改地址
   ここでアドレスを変えてください
-  Note that this code has only granted copyright to:
-  githubID: kuroyukiasuna
   
   **********************************************/
   
@@ -132,7 +130,7 @@ function selectQuestion(){
    
 
    for(var l = 0; l < theLength; l++){
-   var positionIndicator = Math.ceil(l/9);
+   var positionIndicator = Math.floor(l/9);
      $("#part"+positionIndicator).append("<input type='checkbox' class='choices' onclick='answer(this.id)' id='"
 	                            + theNameList[l]+
 								"'style='float: left;'><div id='"
@@ -159,7 +157,6 @@ function answer(ans){
   for(var l = 0; l < cho.length; l++){
      cho[l].disabled = true;
    }
-   console.log(document.getElementById("Roselistext"));
    document.getElementById(theNameList[theAnswer]+"text").style.background = "lightgreen";
    document.getElementById("next").style.visibility = "visible";
    if(ans === theNameList[theAnswer]){
@@ -202,7 +199,6 @@ function setTimeoutForLoading(a1){
 
 loadText("groupname", callback);
 setTimeoutForLoading(0);
-console.log(theList);
  </script>
  </body>
  </html>
