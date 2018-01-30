@@ -11,9 +11,14 @@
  <button id="refresh" onclick="refresh()" style="visibility: hidden">restart</button>
  <div id="questionnire" style="visibility: hidden; top: 0px; position: absolute; float: left;">
      <p>Q: Which maker is this brand from?</p>
-	 <p id="count" style="top: 40px; left: 300px; position: fixed;"></p>
+	 <div id = "part1" style="top: 45px; left: 0px; position: absolute;"></div>
+	 <div id = "part2" style="top: 45px; left: 300px; position: absolute;"></div>
+	 <div id = "part3" style="top: 45px; left: 600px; position: absolute;"></div>
+	 <div id = "part4" style="top: 45px; left: 900px; position: absolute;"></div>
+	 <div id = "part5" style="top: 45px; left: 1200px; position: absolute;"></div>
+	 <p id="count" style="top: 380px; left: 10px; position: fixed;"></p>
    </div>
-   <div style="top: 60px; left: 300px; position: fixed;">
+   <div style="top: 415px; left: 10px; position: absolute;">
    <p id="message" style="visibility: hidden;">correct!</p>
    <button id="next" style="visibility: hidden;" onclick="selectQuestion()">next</button>
  <div>
@@ -44,6 +49,8 @@
   change things here, don't touch anything else
   在这里改地址
   ここでアドレスを変えてください
+  Note that this code has only granted copyright to:
+  githubID: kuroyukiasuna
   
   **********************************************/
   
@@ -121,10 +128,12 @@ function selectQuestion(){
    
    if(beenTested.length === 1){
    
-   $("#questionnire").append("<div id='theQuestion' style='top: 20px; left: 300px; position: fixed;'><strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong></div></br>");
+   $("#questionnire").append("<div id='theQuestion' style='top: 370px; left: 10px; position: fixed;'><strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong></div></br>");
    
+
    for(var l = 0; l < theLength; l++){
-     $("#questionnire").append("<input type='checkbox' class='choices' onclick='answer(this.id)' id='"
+   var positionIndicator = Math.ceil(l/9);
+     $("#part"+positionIndicator).append("<input type='checkbox' class='choices' onclick='answer(this.id)' id='"
 	                            + theNameList[l]+
 								"'style='float: left;'><div id='"
 	                            + theNameList[l] + "text"+
