@@ -121,7 +121,7 @@ function selectQuestion(){
    
    if(beenTested.length === 1){
    
-   $("#questionnire").append("<div id='theQuestion'><strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong></div></br>");
+   $("#questionnire").append("<div id='theQuestion' style='top: 20px; left: 300px; position: fixed;'><strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong></div></br>");
    
    for(var l = 0; l < theLength; l++){
      $("#questionnire").append("<input type='checkbox' class='choices' onclick='answer(this.id)' id='"
@@ -135,7 +135,7 @@ function selectQuestion(){
    }else{
    document.getElementById("message").style.visibility = "hidden";
    document.getElementById("next").style.visibility = "hidden";
-   document.getElementById("theQuestion").innerHTML = theList[theNameList[theAnswer]][question - 1];
+   document.getElementById("theQuestion").innerHTML = "<strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong>";
     var cho = document.getElementsByClassName("choices");
     for(var l = 0; l < cho.length; l++){
      cho[l].disabled = false;
