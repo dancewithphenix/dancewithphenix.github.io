@@ -16,9 +16,9 @@
 	 <div id = "part2" style="top: 45px; left: 600px; position: absolute;"></div>
 	 <div id = "part3" style="top: 45px; left: 900px; position: absolute;"></div>
 	 <div id = "part4" style="top: 45px; left: 1200px; position: absolute;"></div>
-	 <p id="count" style="top: 380px; left: 10px; position: fixed;"></p>
+	 <p id="count" style="top: 380px; left: 10px; position: relative;"></p>
    </div>
-   <div style="top: 415px; left: 10px; position: absolute;">
+   <div style="top: 415px; left: 10px; position: relative;">
    <p id="message" style="visibility: hidden;">correct!</p>
    <button id="next" style="visibility: hidden;" onclick="selectQuestion()">next</button>
  <div>
@@ -126,7 +126,7 @@ function selectQuestion(){
    
    if(beenTested.length === 1){
    
-   $("#questionnire").append("<div id='theQuestion' style='top: 370px; left: 10px; position: fixed;'><strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong></div></br>");
+   $("#questionnire").append("<div id='theQuestion' style='top: 370px; left: 10px; position: relative;'><strong>"+theList[theNameList[theAnswer]][question - 1]+"</strong></div></br>");
    
 
    for(var l = 0; l < theLength; l++){
